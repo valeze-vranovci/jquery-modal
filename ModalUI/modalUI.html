@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modal</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" type="text/css" href="modalUI.css">
+
+	<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+	<script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('#create-user').click(function(){
+				$('#dialog').dialog("open");
+			});
+
+			$('#dialog').dialog({
+				draggable:true, //ByDeafult eshte true
+				resizable:true, //ByDeafult eshte true
+				closeOnEscape:true, //ByDeafult eshte true, 
+				modal:true,  //ByDeafult eshte false, nuk mundesh me interact me elementet tjera 
+				autoOpen:false
+			});
+
+		});
+	</script>
+
+</head>
+<body>
+	<form id="form1">
+		<table class="table table-bordered">
+			<thead>
+     			 <tr>
+       				<th>Firstname</th>
+        			<th>Lastname</th>
+        			<th>Email</th>
+      			</tr>
+   			 </thead>
+    		<tbody>
+    			<tr>
+        			<td>John</td>
+        			<td>Doe</td>
+        			<td>john@example.com</td>
+      			</tr>
+      			<tr>
+        			<td>Mary</td>
+       				<td>Moe</td>
+        			<td>mary@example.com</td>
+      			</tr>
+    		</tbody>
+		</table>
+		<br>
+</form>
+
+		<input type="button" value="Show Dialog" id="create-user"/>
+			<div id="dialog" title="Create new User">
+			<form id="form2" action="">
+				<label for="name">
+					FirstName
+				</label><br>
+				<input type="text" name="fname" ><br>
+				<label for="lastname">
+					LastName
+				</label><br>
+				<input type="text" name="lname" ><br>
+				<label for="email">
+					Email
+				</label><br>
+				<input type="email" name="email" ><br><br>
+
+				<button type="submit" value="Submit" id="submitDemo">Submit</button>
+  				<button type="reset" value="Reset">Reset</button>
+			</form>
+			</div>
+	
+</body>
+</html>
